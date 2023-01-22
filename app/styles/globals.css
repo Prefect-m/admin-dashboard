@@ -1,0 +1,24 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+:root {
+	--primary-color: #000000;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+	color: var(--primary-color);
+}
+a,
+input,
+ul {
+	outline: none;
+	text-decoration: none;
+	list-style-type: none;
+}
+a:focus,
+input:focus {
+	outline: none;
+}
