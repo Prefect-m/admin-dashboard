@@ -18,12 +18,12 @@ export const Layout: FC<PropsWithChildren<ILayoutProps>> = ({
 				indexes={isIndex}
 				children={metaChild}
 			/>
-			<div className='content'>
+			<div className={styles.content}>
 				{/* Navbar */}
 				<Navbar />
 				{/* Sidebar */}
 				<Sidebar />
-				<main>{children}</main>
+				<main className={styles.main}>{children}</main>
 			</div>
 		</div>
 	)
