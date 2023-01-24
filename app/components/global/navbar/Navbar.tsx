@@ -14,22 +14,16 @@ export const Navbar: FC = () => {
 				<Logo />
 			</div>
 			<ul className={styles.action}>
-				<li>
-					<Button onClick={toggleColorMode} variant='unstyled'>
-						{colorMode === 'light' ? (
-							<CiDark size={18} />
-						) : (
-							<CiLight size={18} />
-						)}
-					</Button>
+				<li onClick={toggleColorMode} title='Change theme'>
+					{colorMode === 'light' ? <CiDark size={18} /> : <CiLight size={18} />}
 				</li>
-				<li>
+				<li title='Notifications'>
 					<FiMessageSquare size={18} />
 				</li>
-				<li>
-					<IoMdLogOut size={18} title='Logout..' />
+				<li title='Log out'>
+					<IoMdLogOut size={18} />
 				</li>
-				<li>
+				<li title='Profile setting'>
 					<Avatar
 						size='sm'
 						name='Kent Dodds'
