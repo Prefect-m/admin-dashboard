@@ -1,7 +1,7 @@
 import { IMenuLink } from '@/interfaces/Menu-link.interface'
 import { AiOutlineDashboard } from 'react-icons/ai'
-import { GiEarthAfricaEurope } from 'react-icons/gi'
-import { AiOutlineBarChart } from 'react-icons/ai'
+// import { GiEarthAfricaEurope } from 'react-icons/gi'
+// import { AiOutlineBarChart } from 'react-icons/ai'
 import { FaQuestionCircle } from 'react-icons/fa'
 import { AiFillHome } from 'react-icons/ai'
 import { MdContactSupport } from 'react-icons/md'
@@ -13,16 +13,16 @@ export const menuData = {
 			name: 'Dashboard',
 			icon: AiOutlineDashboard
 		},
-		{
-			link: '/chart/line',
-			name: 'Chart Line',
-			icon: AiOutlineBarChart
-		},
-		{
-			link: '/chart/map',
-			name: 'Chart Map',
-			icon: GiEarthAfricaEurope
-		},
+		// {
+		// 	link: '/chart/line',
+		// 	name: 'Chart Line',
+		// 	icon: AiOutlineBarChart
+		// },
+		// {
+		// 	link: '/chart/map',
+		// 	name: 'Chart Map',
+		// 	icon: GiEarthAfricaEurope
+		// },
 		{
 			link: '/faq',
 			name: 'Faq',
@@ -31,7 +31,7 @@ export const menuData = {
 	] as IMenuLink[],
 	website: [
 		{
-			link: '/website/home',
+			link: '/website',
 			name: 'Home',
 			icon: AiFillHome
 		},

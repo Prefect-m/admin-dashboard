@@ -1,8 +1,8 @@
 import { NextPage } from 'next/types'
-import { Home } from '@/pages'
+import { Dashboard } from '@/pages'
 
-const HomePage: NextPage = () => {
-	return <Home />
+const DashboardPage: NextPage = () => {
+	return <Dashboard />
 }
 
-export default HomePage
+export default DashboardPage
