@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import styles from './Navbar.module.scss'
-import { IoMdLogOut } from 'react-icons/io'
-import { FiMessageSquare } from 'react-icons/fi'
+import { IoExitSharp } from 'react-icons/io5'
+import { BsEnvelopeFill } from 'react-icons/bs'
 import { CiDark, CiLight } from 'react-icons/ci'
 import { Logo } from '@/components'
 import { Avatar, Button, useColorMode } from '@chakra-ui/react'
@@ -15,13 +15,13 @@ export const Navbar: FC = () => {
 			</div>
 			<ul className={styles.action}>
 				<li onClick={toggleColorMode} title='Change theme'>
-					{colorMode === 'light' ? <CiDark size={18} /> : <CiLight size={18} />}
+					{colorMode === 'light' ? <CiDark size={20} /> : <CiLight size={20} />}
 				</li>
 				<li title='Notifications'>
-					<FiMessageSquare size={18} />
+					<BsEnvelopeFill size={16} />
 				</li>
 				<li title='Log out'>
-					<IoMdLogOut size={18} />
+					<IoExitSharp size={18} />
 				</li>
 				<li title='Profile setting'>
 					<Avatar
