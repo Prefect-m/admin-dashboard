@@ -1,4 +1,16 @@
 .navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   grid-area: navbar;
-  border: 1px solid green;
+  padding-right: 30px !important;
+  border-bottom: 1px solid rgba(119, 119, 119, 0.5);
+  .action{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    li{
+      cursor: pointer;
+    }
+  }
 }
