@@ -10,7 +10,9 @@
     align-items: center;
     gap: 12px;
     li{
+      position: relative;
       cursor: pointer;
+      
     }
   }
 }
