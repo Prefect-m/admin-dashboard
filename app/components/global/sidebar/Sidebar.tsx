@@ -22,7 +22,7 @@ export const Sidebar: FC = () => {
 			</div>
 			<div className={styles.end}>
 				<Text fontSize='sm' as='u'>
-					By Falcon group
+					Developed and maintained by the corporation Falcon group
 				</Text>
 			</div>
 		</div>
