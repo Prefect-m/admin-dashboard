@@ -1,3 +1,6 @@
 export const inputStyles = {
-	':focus-visible': { 'border-color': 'inherit', 'box-shadow': 'none' }
+	background: 'none',
+	padding: '10px 10px',
+	border: '1px solid var(--chakra-colors-blackAlpha-200)',
+	borderRadius: '4px'
 }
