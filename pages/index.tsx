@@ -11,7 +11,7 @@ const DashboardLogin: NextPage = (props) => {
 	useEffect(() => {
 		if (errors) {
 			toastr({
-        title: `${errors}`,
+        description: `${errors}`,
         status: 'error',
         isClosable: true,
       })

@@ -10,7 +10,6 @@ import {
 	Button,
 	FormErrorMessage,
 	FormControl,
-	useToast,
 } from '@chakra-ui/react'
 import { BiHide, BiShowAlt } from 'react-icons/bi'
 import { IoEnterOutline } from 'react-icons/io5'
@@ -22,9 +21,9 @@ import { useActions } from '@/hooks/use.actions'
 export const Login: FC = () => {
 	const {login} = useActions()
 	const [show, setShow] = useState(false)
+	const [disable, setDisable] = useState(false)
 	const handleClick = () => setShow(!show)
-	const toastr = useToast()
-
+	
 	const submitHandler =  (values: {email: string, password: string}, actions) => {
 		login({...values})
 	}
@@ -35,14 +34,13 @@ export const Login: FC = () => {
 				<title itemProp='headline'>Выполните вход</title>
 			</Head>
 			<div className={styles.login}>
-				
 				<div className={styles.content} >
 					<Formik  
 						initialValues={{email: '', password: ''}}
 						validate={values => logInValidate(values)}
 						onSubmit={(values, actions) => submitHandler(values, actions)}
 						>
-						{({errors, touched, values, handleChange, handleSubmit, isSubmitting}) => (
+						{({errors, touched, values, handleChange, handleSubmit, isValid}) => (
 							<Form onSubmit={handleSubmit}>
 							<Stack spacing={6}  color='blackAlpha.700'>
 								<InputGroup flexDirection='column'>
@@ -66,7 +64,7 @@ export const Login: FC = () => {
 										</InputRightElement>
 									</FormControl>
 								</InputGroup>
-								<Button disabled={isSubmitting} type='submit' colorScheme='facebook' rightIcon={<IoEnterOutline />} color="whiteAlpha.900">
+								<Button isDisabled={!isValid} type='submit' colorScheme='facebook' rightIcon={<IoEnterOutline />} color="whiteAlpha.900">
 									Войти
 								</Button>
 							</Stack>

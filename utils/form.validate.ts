@@ -8,6 +8,8 @@ export const logInValidate = (value: AuthFields) => {
     errors.email = 'Введите корректный E-mail'
   } else if (!value.password.length){
     errors.password = 'Пароль не может быть пустым'
+  }else if (value.password.length <= 4 ){
+    errors.password = 'Минимальная длина пароля 5 символов'
   }
   return errors
 }
