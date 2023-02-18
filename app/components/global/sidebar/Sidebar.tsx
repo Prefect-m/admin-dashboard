@@ -21,8 +21,8 @@ export const Sidebar: FC = () => {
 				</div>
 			</div>
 			<div className={styles.end}>
-				<Text fontSize='sm' as='u'>
-					Developed and maintained by the corporation Falcon group
+				<Text fontSize='smaller' as='u'>
+					Developed and maintained by the Falcon group
 				</Text>
 			</div>
 		</div>

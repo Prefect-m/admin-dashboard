@@ -17,9 +17,10 @@ export const authSlice = createSlice({
   name: "auth",
   initialState: {
     isLoading: false,
+    isLogged: false,
     accessToken: '',
     refreshToken: '',
-    errors: '',
+    errors: null,
     user: userState
   },
   reducers: {},
@@ -27,14 +28,19 @@ export const authSlice = createSlice({
     build
     .addCase(login.pending, (state, {payload}) => {
       state.isLoading = true
+      state.isLogged = false
+      state.errors = null
     })
     .addCase(login.fulfilled, (state, {payload}) => {
       state.isLoading = false
       state.user = payload.user
       state.accessToken = payload.accessToken
       state.refreshToken = payload.refreshToken
+      state.isLogged = true
+      state.errors = null
     })
     .addCase(login.rejected, (state, {payload}) => {
+      state.isLogged = false
       state.isLoading = false
       // @ts-ignore
       state.errors = payload

@@ -21,7 +21,6 @@ import { useActions } from '@/hooks/use.actions'
 export const Login: FC = () => {
 	const {login} = useActions()
 	const [show, setShow] = useState(false)
-	const [disable, setDisable] = useState(false)
 	const handleClick = () => setShow(!show)
 	
 	const submitHandler =  (values: {email: string, password: string}, actions) => {

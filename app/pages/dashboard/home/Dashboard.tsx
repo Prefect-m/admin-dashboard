@@ -1,4 +1,4 @@
-import { LineChart, ModalComponent, PieChart } from '@/components'
+import { LineChart, PieChart } from '@/components'
 import { Layout } from '@/layout/Layout'
 import { FC } from 'react'
 import { Grid, GridItem } from '@chakra-ui/react'

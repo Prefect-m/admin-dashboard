@@ -9,7 +9,7 @@ import { MdContactSupport } from 'react-icons/md'
 export const menuData = {
 	dashboard: [
 		{
-			link: '/',
+			link: '/dashboard',
 			name: 'Dashboard',
 			icon: AiOutlineDashboard
 		},

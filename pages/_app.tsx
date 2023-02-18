@@ -7,8 +7,10 @@ import {
 	ModalComponentInitialContext,
 	ModalComponentProvider
 } from '@/contexts/Modal-component'
-import { store } from '../store'
+import { persistore, store } from '../store'
 import NextNProgress from 'nextjs-progressbar'
+import { PersistGate } from 'redux-persist/integration/react'
+import { ProtectRoute } from '../utils/auth.check'
 
 export default function App({ Component, pageProps }: AppProps) {
 	const modalProvider = ModalComponentProvider()
@@ -16,11 +18,15 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<Provider store={store}>
 			<NextNProgress options={{ showSpinner: false }} />
-			<ChakraProvider theme={theme}>
-					<ModalComponentInitialContext.Provider value={{ ...modalProvider }}>
-						<Component {...pageProps} />
-					</ModalComponentInitialContext.Provider>
-			</ChakraProvider>
+			<PersistGate persistor={persistore} loading={null}>
+					<ChakraProvider theme={theme}>
+						<ModalComponentInitialContext.Provider value={{ ...modalProvider }}>
+							<ProtectRoute>
+								<Component {...pageProps} />
+							</ProtectRoute>
+						</ModalComponentInitialContext.Provider>
+					</ChakraProvider>
+			</PersistGate>
 		</Provider>
 	)
 }

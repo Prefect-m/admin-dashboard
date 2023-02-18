@@ -15,8 +15,12 @@ import {
 } from '@chakra-ui/react'
 import { MdModeEdit } from 'react-icons/md'
 import { IoExitSharp } from 'react-icons/io5'
+import { useSelector } from '@/hooks/use.selector'
+import { useAuth } from '@/hooks/use.auth'
 
 export const Profile: FC = () => {
+	const {user} = useAuth()
+	
 	return (
 		<Popover>
 			<PopoverTrigger>
@@ -27,7 +31,7 @@ export const Profile: FC = () => {
 				<PopoverCloseButton />
 				<PopoverHeader>
 					<Heading as='h4' size='sm'>
-						Kent Dodds
+						{user.name}
 					</Heading>
 				</PopoverHeader>
 				<PopoverBody>
